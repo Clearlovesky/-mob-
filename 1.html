@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table>
+	<tr class="box1">
+		<td><input type="checkbox" class="aa" checked="true"></td>
+		<td><input type="text" class="bb"></td>
+	</tr>
+	<tr class="box1">
+		<td><input type="checkbox" class="aa"></td>
+		<td><input type="text" class="bb" disabled="true"></td>
+	</tr>
+	<tr class="box1">
+		<td><input type="checkbox" class="aa"></td>
+		<td><input type="text" class="bb" disabled="true"></td>
+	</tr>
+</table>
+
+<p>点击下面的按钮来显示今天是周几：</p>
+
+<button onclick="myFunction()">点击这里</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction()
+{
+var x;
+var d=new Date().getDay();
+switch (d)
+  {
+  case 0:
+    x="礼拜天";
+    break;
+  case 1:
+    x="礼拜1";
+    break;
+  case 2:
+    x="礼拜2";
+    break;
+  case 3:
+    x="礼拜3";
+    break;
+  case 4:
+    x="礼拜4";
+    break;
+  case 5:
+    x="礼拜5";
+    break;
+  case 6:
+    x="礼拜6";
+    break;
+  }
+document.getElementById("demo").innerHTML=x;
+}
+</script>
+
+</body>
+</html>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+	$('.aa').click(function(){
+		if (this.checked) {
+			$(this).parent('td').siblings('td').find('.bb').prop('disabled',false);
+			$(this).parent('td').parent('tr').siblings('tr').find('.bb').prop('disabled',true);
+			$(this).parent('td').parent('tr').siblings('tr').find('.aa').prop('checked',false);
+		}else{
+			$(this).parent('td').siblings('td').find('.bb').prop('disabled',true);
+		}
+	})
+</script>
+<script type="text/javascript" src="//f.moblink.mob.com/3.0.1/moblink.js?appkey=2527af3e86b85"></script>
+<script>
+  MobLink({
+  el: '',
+  path: 'demo/a',
+  params: {
+       key1: 'value1',
+       key2: 'value2',
+  }
+  })
+</script>
+</body>
+</html>
