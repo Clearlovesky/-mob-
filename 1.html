@@ -25,7 +25,7 @@
 
 <p>点击下面的按钮来显示今天是周几：</p>
 
-<button onclick="myFunction()">点击这里</button>
+<button onclick="myFunction()" id="openApp">点击这里</button>
 
 <p id="demo"></p>
 
@@ -78,15 +78,32 @@ document.getElementById("demo").innerHTML=x;
 </script>
 <script type="text/javascript" src="//f.moblink.mob.com/3.0.1/moblink.js?appkey=2527af3e86b85"></script>
 <script>
-  MobLink({
-
-  el: '',
-  path: 'demo/a',
-  params: {
-       key1: 'value1',
-       key2: 'value2',
-  }
-  })
+  // MobLink({
+  //   el: '',
+  //   path: 'demo/a',
+  //   params: {
+  //        key1: 'value1',
+  //        key2: 'value2',
+  //   }
+  // })
+  MobLink([
+   {
+      el: '',
+      path: 'demo/a',
+      params: {
+           key1: 'value1',
+           key2: 'value2',
+      }
+   },
+   {
+       el: '#openApp',
+       path: 'demo/b',
+       params: {
+           key1: 'value1',
+           key2: 'value2',
+       }
+   }
+  ]);
 </script>
 </body>
 </html>
